@@ -9,10 +9,14 @@ const ResultCard = ({movie}) => {
                 <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
                 alt={`${movie.title} Poster`} />
             ): (
-                <div className={toto.fillerPoster}>
-
-                </div>
+                <div className={toto.fillerPoster}></div>
             )}
+        </div>
+        <div className={toto.info}>
+            <div className={toto.header}>
+                <h3 className={toto.title}>{movie.title}</h3>
+                <h4 className={toto.releaseDate}>{movie.release_date.substring(0,4)}</h4>
+            </div>
         </div>
     </div>
   );

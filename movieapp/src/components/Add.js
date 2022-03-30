@@ -1,7 +1,7 @@
 import React from 'react';
 import toto from './Add.module.css';
 import {useState} from 'react';
-import {ResultCard} from './ResultCard';
+import ResultCard from './ResultCard';
 const Add = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
