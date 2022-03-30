@@ -14,3 +14,22 @@
     color: transparent;
   }
   
+  .resultCard .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .resultCard .info .title {
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .resultCard .info .releaseDate {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--primary);
+    margin: 0;
+  }
