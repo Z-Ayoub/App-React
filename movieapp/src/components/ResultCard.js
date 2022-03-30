@@ -1,7 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 import toto from './Add.module.css';
 
 const ResultCard = ({movie}) => {
+    const {
+       addMovieToWatchlist 
+    } = useContext(GlobalContext);
   return (
     <div className={toto.resultCard}>
         <div className={toto.posterWrapper}>
@@ -21,7 +26,9 @@ const ResultCard = ({movie}) => {
             </div>
 
             <div className={toto.controls}>
-                <button className={toto.btn}>
+                <button className={toto.btn}
+                onClick={() => addMovieToWatchlist(movie)}
+                >
                     Add to WatchList
                 </button>
 
