@@ -33,3 +33,7 @@
     color: var(--primary);
     margin: 0;
   }
+
+  .result-card .controls button {
+    margin-right: 10px;
+  }

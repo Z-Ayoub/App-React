@@ -1,6 +1,6 @@
 import React from 'react';
 import {createContext, useReducer, useEffect} from 'react';
-
+import AppReducer from './AppReducer';
 //Initialiser State
 
 const initialState = {
@@ -14,4 +14,9 @@ export const GlobalContext = createContext(initialState);
 // Provider components
 export const GlobalProvider = props => {
     const [state, dispatch] = useReducer(AppReducer,initialState);
-}
+    return (
+        <GlobalContext.Provider value={{watchlist: state.watchlist, watched: state.watched }}>
+            {props.children}
+        </GlobalContext.Provider>
+    )
+};
