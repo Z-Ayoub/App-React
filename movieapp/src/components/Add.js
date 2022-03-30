@@ -1,6 +1,7 @@
 import React from 'react';
 import toto from './Add.module.css';
-import{useState} from 'react';
+import {useState} from 'react';
+import {ResultCard} from './ResultCard';
 const Add = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
@@ -31,10 +32,10 @@ const Add = () => {
                 </div>
 
                 {results.length > 0 && (
-                    <ul className="results">
+                    <ul className={toto.results}>
                         {results.map(movie => (
-                            <li>
-                                {movie.title}
+                            <li key={movie.id}>
+                                <ResultCard movie={movie} />
                             </li>
                         ))}
                     </ul>
