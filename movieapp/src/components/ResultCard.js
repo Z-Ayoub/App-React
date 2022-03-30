@@ -19,6 +19,13 @@ const ResultCard = ({movie}) => {
                     {movie.release_date ? movie.release_date.substring(0,4) : "-"}
                 </h4>
             </div>
+
+            <div className={toto.controls}>
+                <button className={toto.btn}>
+                    Add to WatchList
+                </button>
+
+            </div>
         </div>
     </div>
   );
