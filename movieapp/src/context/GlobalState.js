@@ -12,11 +12,11 @@ const initialState = {
 export const GlobalContext = createContext(initialState);
 
 // Provider components
-export const GlobalProvider = props => {
+export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer,initialState);
     
     // Actions
-    const addMovieToWatchlist = movies => {
+    const addMovieToWatchlist = (movie) => {
         dispatch({type: "ADD_MOVIE_TO_WATCHLIST", payload: movie});
     }
 
