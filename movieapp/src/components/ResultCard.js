@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import toto from './Add.module.css';
+import toto from './ResultCard.module.css';
 
 const ResultCard = ({movie}) => {
     const {

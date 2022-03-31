@@ -1,5 +1,5 @@
 import React from 'react';
-import toto from './MovieCard.module.css';
+import toto from './Watchlist.module.css';
 const MovieCard = ({movie,type}) => {
     return(
         <div className={toto.movieCard}>

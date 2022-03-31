@@ -1,9 +1,9 @@
-  .resultCard {
+.resultCard {
     display: flex;
     margin-bottom: 20px;
   }
   
-.resultCard .posterWrapper img .fillerPoster {
+.resultCard .posterWrapper img, .fillerPoster {
     width: 75px;
     height: 113px;
     background-color: #dbdada;
