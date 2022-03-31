@@ -19,10 +19,10 @@ function App() {
         <Route exact path="/">
           <Watchlist/>
         </Route>
-        <Route exact path="/watched">
+        <Route path="/watched">
           <Watched/>
         </Route>
-        <Route exact path="/Add">
+        <Route path="/Add">
           <Add/>
         </Route>
       </Switch>

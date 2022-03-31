@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 import toto from './Header.module.css';
 const Header = () => {
   return (
-    <Header>
+    <div className={toto.header}>
         <div className={toto.container}>
             <div className={toto.innerContent}>
                 <div className={toto.brand}>
-                    <Link to="/">WatchList</Link>
+                    <Link to="/">Home</Link>
                 </div>
 
                 <ul className={toto.navlinks}>
                     <li>
-                        <Link to="/">Watch List</Link>
+                        <Link to="/">Films à regarder</Link>
                     </li>
 
                     <li>
-                        <Link to="/watched">Watched</Link>
+                        <Link to="/watched">Films déjà vu</Link>
                     </li>
 
                     <li>
@@ -25,7 +25,7 @@ const Header = () => {
                 </ul>
             </div>
         </div>
-    </Header>
+    </div>
   );
 }
 export default Header;
