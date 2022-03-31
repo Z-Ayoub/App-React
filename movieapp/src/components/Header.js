@@ -20,7 +20,7 @@ const Header = () => {
                     </li>
 
                     <li>
-                        <Link to="/ajouter" className={toto.btn}>+ Ajouter</Link>
+                        <Link to="/add" className={toto.btn}>+ Ajouter</Link>
                     </li>
                 </ul>
             </div>
