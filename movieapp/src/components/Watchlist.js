@@ -20,7 +20,8 @@ const Watchlist = () => {
                     </div>
                 ) : (
                     <h2 className={toto.noMovies}>
-                        Sorry :( No movies found, Go add some ...
+                        Sorry!! No movies found, Go add some ...
+                        <h1>:(</h1>
                     </h2>
                 )}
 
