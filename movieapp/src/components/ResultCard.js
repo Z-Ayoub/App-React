@@ -5,12 +5,22 @@ import toto from './ResultCard.module.css';
 
 const ResultCard = ({movie}) => {
     const {
-       addMovieToWatchlist, watchlist 
+       addMovieToWatchlist, watchlist,
+       addMovieToWatched,watched
     } = useContext(GlobalContext);
 
-    let storedMovie = watchlist.find(o => o.id === movie.id);
+    let storedMovie = watchlist.find((o) => o.id === movie.id);
 
-    const watchlistDisabled = storedMovie ? true : false
+    let storedMovieWatched = watched.find((o) => o.id === movie.id);
+
+    const watchlistDisabled = storedMovie 
+    ? true 
+    : storedMovieWatched
+    ? true
+    : false;
+
+    const watchDisabled = storedMovieWatched ? true : false;
+
   return (
     <div className={toto.resultCard}>
         <div className={toto.posterWrapper}>
@@ -37,6 +47,12 @@ const ResultCard = ({movie}) => {
                     Ajouter à WatchList
                 </button>
 
+                <button className={toto.btn}
+                    disabled={watchDisabled}
+                    onClick={() => addMovieToWatched(movie)}
+                >
+                    Ajouter à Watched
+                </button> 
             </div>
         </div>
     </div>
