@@ -15,6 +15,10 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer,initialState);
     
+    useEffect(() => {
+        localStorage.setItem('watchlist', JSON.stringify(state.watchlist))
+    }, [state]);
+
     // Actions
     const addMovieToWatchlist = (movie) => {
         dispatch({type: "ADD_MOVIE_TO_WATCHLIST", payload: movie});
@@ -22,10 +26,11 @@ export const GlobalProvider = (props) => {
 
     return (
         <GlobalContext.Provider 
-        value={{watchlist: state.watchlist,
-         watched: state.watched,
-          addMovieToWatchlist,
-          }}>
+        value={{
+            watchlist: state.watchlist,
+            watched: state.watched,
+            addMovieToWatchlist,
+        }}>
             {props.children}
         </GlobalContext.Provider>
     )
