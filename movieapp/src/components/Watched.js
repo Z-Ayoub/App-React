@@ -10,6 +10,9 @@ const Watched = () => {
       <div className={toto.container}>
         <div className={toto.header}>
           <h1 className={toto.heading}>Watched Movies</h1>
+          <span className={toto.countPill}>
+                        {watched.length} {watched.length === 1 ? "Movie" : "Movies"}
+                    </span>
         </div>
         {watched.length > 0 ? (
           <div className={toto.movieGrid}>

@@ -10,6 +10,10 @@ const Watchlist = () => {
             <div className={toto.container}>
                 <div className={toto.header}>
                     <h1 className={toto.heading}>My Watchlist</h1>
+
+                    <span className={toto.countPill}>
+                        {watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}
+                    </span>
                 </div>
 
                 {watchlist.length > 0 ? (
