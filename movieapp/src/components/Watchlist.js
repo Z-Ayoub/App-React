@@ -6,17 +6,23 @@ import toto from './Watchlist.module.css';
 const Watchlist = () => {
     const {watchlist} = useContext(GlobalContext);
     return (
-        <div className={toto.movieApp}>
+        <div className={toto.moviePage}>
             <div className={toto.container}>
                 <div className={toto.header}>
                     <h1 className={toto.heading}>My Watchlist</h1>
                 </div>
 
-                <div className={toto.movieGrid}>
-                   {watchlist.map(movie => (
-                       <MovieCard movie={movie} type="watchlist"/>
-                    ))}
-                </div>
+                {watchlist.length > 0 ? (
+                    <div className={toto.movieGrid}>
+                        {watchlist.map(movie => (
+                        <MovieCard movie={movie} type="watchlist"/>
+                        ))}
+                    </div>
+                ) : (
+                    <h2 className={toto.noMovies}>
+                        Sorry :( No movies found, Go add some ...
+                    </h2>
+                )}
 
             </div>
         </div>
