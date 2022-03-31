@@ -29,8 +29,8 @@ export default (state, action) => {
                 return{
                     ...state,
                     watched: state.watchlist.filter(movie=> movie.id !== action.payload.id
-                    ), 
-                    };
+                    ),
+                };
         default : 
             return state;
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import toto from './Watchlist.module.css';
+import MovieControls  from './MovieControls';
 const MovieCard = ({movie,type}) => {
     return(
         <div className={toto.movieCard}>
@@ -12,6 +13,8 @@ const MovieCard = ({movie,type}) => {
             ): (
                 <div className={toto.fillerPoster}></div>
             )}
+
+            <MovieControls type={type} movie={movie}/>
         </div>
     );
 }

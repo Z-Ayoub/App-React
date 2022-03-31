@@ -4,22 +4,22 @@
  import { useContext  } from 'react';
  import { GlobalContext } from '../context/GlobalState';
  
- const MovieControls = () => {
+ const MovieControls = ({movie,type}) => {
    const {removeMovieFromWatchlist, addMovieToWatched, moveMovieFromWatched, removeMovieFromWatched} = useContext(GlobalContext);     
    return (
      <div className={toto.innerCardControls}>
          { type === "watchlist" && (
              <>
-                <Button className={toto.ctrlbtn}
+                <button className={toto.ctrlbtn}
                 onClick={() => addMovieToWatched(movie)}
                 >
                     <i className="fa-fw far fa-eye"></i>
-                </Button>
-                <Button className={toto.ctrlbtn} 
+                </button>
+                <button className={toto.ctrlbtn} 
                 onClick={() => removeMovieFromWatchlist(movie.id)}>
 
                     <i className="fa-fw fa fa-times"></i>
-                </Button>
+                </button>
              </>
          )}
 
