@@ -5,6 +5,7 @@ import ResultCard from './ResultCard';
 
 const Add = () => {
   const [query,setQuery] = useState("");
+  const [results, setResults] = useState([]);
 
   const onChange = (e) => {
       e.preventDefault();
@@ -13,7 +14,11 @@ const Add = () => {
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=6453b53f4533c3e763c494b766ff3cf3&language=en-US&page=1&include_adult=false&query=${e.target.value}`
       ).then((res) => res.json())
       .then((data) => {
-          console.log(data);
+          if(!data.errors){
+            setResults(data.results);
+          }else {
+            setResults([]);
+          }
       });
   }
   return (
@@ -26,6 +31,16 @@ const Add = () => {
             value={query}
             onChange={onChange}
             />
+
+        {results.length > 0 && (
+                    <ul className={toto.results}>
+                        {results.map(movie => (
+                            <li>
+                                {movie.title}
+                            </li>
+                        ))}
+                    </ul>
+                )}
           </div>
         </div>
       </div>
