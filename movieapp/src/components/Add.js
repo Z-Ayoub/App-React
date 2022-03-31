@@ -35,8 +35,8 @@ const Add = () => {
         {results.length > 0 && (
                     <ul className={toto.results}>
                         {results.map(movie => (
-                            <li>
-                                {movie.title}
+                            <li key={movie.id}>
+                                <ResultCard movie={movie}/>
                             </li>
                         ))}
                     </ul>
