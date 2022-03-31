@@ -29,7 +29,7 @@ const ResultCard = ({movie}) => {
                 <button className={toto.btn}
                 onClick={() => addMovieToWatchlist(movie)}
                 >
-                    Add to WatchList
+                    Ajouter à WatchList
                 </button>
 
             </div>
