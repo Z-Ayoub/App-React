@@ -1,9 +1,16 @@
 import React from 'react';
 import toto from './Add.module.css';
+/*
+importer useState: permet essentiellement de créer un état
+à l'intérieur d'un composant fonctionnel 
+*/
 import {useState} from 'react';
 import ResultCard from './ResultCard';
 
 const Add = () => {
+
+  /* créer une nouvelle variable s'appelle notre état Query et un autre paramètre setQuery qui nous permet de
+     changer notre état et ensuite nous allons la fonction useState qui prend l'état initial pour commencer */
   const [query,setQuery] = useState("");
   const [results, setResults] = useState([]);
 
