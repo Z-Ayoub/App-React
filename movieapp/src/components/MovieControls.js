@@ -13,7 +13,7 @@
                 <button className={toto.ctrlbtn}
                 onClick={() => addMovieToWatched(movie)}
                 >
-                    <i className="fa-fw far fa-eye"></i>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
                 </button>
                 <button className={toto.ctrlbtn} 
                 onClick={() => removeMovieFromWatchlist(movie.id)}>
@@ -25,12 +25,12 @@
 
          { type === "watched" && (
             <>
-                <button className={toto.ctrbtn}
+                <button className={toto.ctrlbtn}
                 onClick={() => moveMovieFromWatched(movie)}
                 >
-                    <i className="fa-fw far-eye-slash"></i>
+                    <i className="fas fa-eye-slash"></i>
                 </button>
-                <button className={toto.ctrbtn}
+                <button className={toto.ctrlbtn}
                 onClick={() => removeMovieFromWatched(movie.id)}
                 >
                     <i className="fa-fw fa fa-times"></i>

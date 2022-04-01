@@ -1,5 +1,5 @@
 import React from 'react';
-import toto from './Watchlist.module.css';
+import toto from './MovieCard.module.css';
 import MovieControls  from './MovieControls';
 const MovieCard = ({movie,type}) => {
     return(

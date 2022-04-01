@@ -19,7 +19,15 @@ function App() {
     <Router>
       {/* Appeler Header element en haut pour s'apparaître sur chaque page que nous voulons*/}
       <Header/>
-      {/*  */}
+      
+      {/* permet essentiellement de nous déplacer dans notre App pour parcourir notre demande
+        On peut utiliser aussi :
+        <BrowserRouter>
+          <Routes>
+            <Route / >
+          </Routes
+        </BrowserRouter>
+      */}
       <Switch>
         <Route exact path="/">
           <Watchlist/>
@@ -35,5 +43,4 @@ function App() {
    </GlobalProvider>
   );
 }
-
 export default App;

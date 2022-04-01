@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import toto from './Header.module.css';
 const Header = () => {
   return (
-    <div className={toto.header}>
+    <header>
         <div className={toto.container}>
             <div className={toto.innerContent}>
                 <div className={toto.brand}>
                 {/*créer un lien et cela nous amènera essentiellement à la page d'accueil*/}
-                    <Link to="/">Home</Link>
+                    <Link to="/">Ayzi Movies</Link>
                 </div>
 
                 <ul className={toto.navlinks}>
@@ -30,7 +30,7 @@ const Header = () => {
                 </ul>
             </div>
         </div>
-    </div>
+    </header>
   );
 }
 export default Header;

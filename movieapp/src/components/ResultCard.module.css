@@ -1,9 +1,16 @@
+:root {
+  --primary: #273746;
+  --secondary: #F1C40F;
+  --white: white;
+}  
+
 .resultCard {
     display: flex;
     margin-bottom: 20px;
   }
   
-.resultCard .posterWrapper img, .fillerPoster {
+.resultCard .posterWrapper img,
+.fillerPoster {
     width: 75px;
     height: 113px;
     background-color: #dbdada;
@@ -33,7 +40,7 @@
     margin: 0;
   }
 
-.result-card .controls button {
+.resultCard .controls button {
     margin-right: 10px;
   }
 
@@ -52,7 +59,7 @@
 }
   
 .btn:hover {
-    background-color: #1aa762;
+    background-color: var(--secondary);
     opacity: 1;
     cursor: pointer;
 }
@@ -61,8 +68,3 @@
     pointer-events: none;
     opacity: 0.5;
 }
-  
-input:focus {
-    outline: none;
-}
-  

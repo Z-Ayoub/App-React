@@ -1,15 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 
 :root {
-  --primary: #032541;
-  --secondary: #21d07a;
-  --white: #fff;
-}
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  padding: 0;
-  margin: 0;
+  --primary: #273746;
+  --secondary: #F1C40F;
+  --white: white;
 }
 
 .container {
@@ -44,34 +38,34 @@ body {
 }
 
 
-.header {
+header {
     background-color: var(--primary);
 }
 
-.header .innerContent {
+header .innerContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
 }
 
-.header a {
+header a {
     color: var(--white);
     font-size: 1.25rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.header a:hover {
+header a:hover {
     opacity: 0.7;
 }
 
-.header .brand a {
-    font-weight: 700;
+header .brand a {
+    font-weight: 900;
     font-size: 1.5rem;
 }
 
-.header .navlinks {
+header .navlinks {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -79,14 +73,15 @@ body {
     align-items: center;
 }
 
-.header .navlinks li {
+header .navlinks li {
     display: inline-block;
     margin-right: 30px;
 }
 
-.header .navlinks li:last-child {
+header .navlinks li:last-child {
     margin-right: 0;
 }
+
 .btn {
     padding: 10px 15px;
     background-color: var(--secondary);
@@ -101,18 +96,13 @@ body {
     line-height: 1.1;
 }
   
-  .btn:hover {
-    background-color: #1aa762;
+.btn:hover {
+    background-color:#7D6608 ;
     opacity: 1;
     cursor: pointer;
 }
   
-  .btn:disabled {
+.btn:disabled {
     pointer-events: none;
     opacity: 0.5;
 }
-  
-  input:focus {
-    outline: none;
-}
-  

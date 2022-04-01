@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import MovieCard from './MovieCard';
-import toto from './Watchlist.module.css';
+import toto from './Watched.module.css';
 const Watched = () => {
   const { watched } = useContext(GlobalContext);
   return (
@@ -22,7 +22,8 @@ const Watched = () => {
           </div>
         ) : (
           <h2 className={toto.noMovies}>
-            Sorry :( No movies found, Go add some ...
+            Sorry!! No movies found, Go add some ...
+            <h1>:(</h1>
           </h2>
         )}
 
