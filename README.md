@@ -15,7 +15,7 @@ Things you need to get started:
 
 # Installing 
 
-To get the project running, follow these steps:
+To run the project, follow these steps:
 
 - Create a folder & enter into that folder
 ```
@@ -62,7 +62,136 @@ l'application :
 ```
 npm install react-router-dom
 ```
-* On utilise BrowserRouter pour envelopper notre contenu.
-* On définit Routes
-* Route prend un chemin d'accès et rend le Layoutcomposant.
+Il existe deux types de composants de routeur :
+  - BrowserRouter : Il est utilisé pour gérer l'URL dynamique.
+  - HashRouter : Il est utilisé pour gérer la requête statique.
+Exemple :
+```
+import React from 'react';  
+import ReactDOM from 'react-dom';  
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'  
+import './index.css';  
+import App from './App';  
+import About from './about'  
+import Contact from './contact'  
+  
+const routing = (  
+  <Router>  
+    <div>  
+      <h1>React Router Example</h1>  
+      <ul>  
+        <li>  
+          <Link to="/">Home</Link>  
+        </li>  
+        <li>  
+          <Link to="/about">About</Link>  
+        </li>  
+        <li>  
+          <Link to="/contact">Contact</Link>  
+        </li>  
+      </ul>  
+      <Route exact path="/" component={App} />  
+      <Route path="/about" component={About} />  
+      <Route path="/contact" component={Contact} />  
+    </div>  
+  </Router>  
+)  
+ReactDOM.render(routing, document.getElementById('root'));
+```
+
+Hooks permettent aux composants fonctionnels d'avoir accès à l'état et à d'autres fonctionnalités de React. De ce fait, les composants de classe ne sont généralement plus nécessaires. On peut utiliser plusieurs Hooks :
+ - useState : est la nouvelle façon de déclarer un état dans l'application React. Hook utilise le composant fonctionnel useState() pour définir et récupérer l'état.
+ example : 
+```
+import React, { useState } from 'react';  
+  
+function CountApp() {  
+  const [count, setCount] = useState(0);  
+  
+  return (  
+    <div>  
+      <p>You clicked {count} times</p>  
+      <button onClick={() => setCount(count + 1)}>  
+        Click here  
+      </button>  
+    </div>  
+  );  
+}  
+export default CountApp;  
+```
+ 
+ - useEffect : permet d'effectuer des effets secondaires (une action) dans les composants de la fonction. Il n'utilise pas les méthodes de cycle de vie des composants qui sont disponibles dans les composants de classe. En d'autres termes, useEffect est équivalent aux méthodes de cycle de vie componentDidMount(), componentDidUpdate() et componentWillUnmount().
+Les effets secondaires ont des fonctionnalités communes que la plupart des applications Web doivent exécuter, telles que :
+    - Mise à jour du DOM,
+    - Récupérer et consommer des données depuis une API serveur,
+    - Mise en place d'un abonnement, etc.
+ exemple :
+ ```
+ import React, { useState, useEffect } from 'react';  
+  
+function CounterExample() {  
+  const [count, setCount] = useState(0);  
+  
+  useEffect(() => {  
+    document.title = `You clicked ${count} times`;  
+  });  
+  
+  return (  
+    <div>  
+      <p>You clicked {count} times</p>  
+      <button onClick={() => setCount(count + 1)}>  
+        Click here  
+      </button>  
+    </div>  
+  );  
+}  
+export default CounterExample;  
+ ```
+ - useContext : est un hook qui permet de se “brancher” depuis un composant enfant qui a été wrappé par un Provider  , et donc d’accéder simplement au state partagé.
+On utilise useContext en configurant un Context Provider et définissan les données que nous souhaitons stocker. Context est utilisé pour partager des données qui peuvent être considérées comme "Global" pour l'arborescence des composants React et utiliser ces données si nécessaire, telles que l'utilisateur authentifié actuel, le thème, etc.
+ - useReducer : est un hook qui permettra de définir un état en l'accompagnant d'une fonction réductrice qui permettra de décrire les différentes mutations possibles.
+
+Props signifient "Properties". Ce sont des composants en lecture seule. C'est un objet qui stocke la valeur des attributs d'une balise et fonctionne de manière similaire aux attributs HTML. Il permet de transmettre des données d'un composant à d'autres composants. Il est similaire aux arguments de fonction. Props sont passés au composant de la même manière que les arguments passés dans une fonction.
+
+
+React a son propre système de gestion des événements qui est très similaire à la gestion des événements sur les éléments DOM. Le système de gestion des événements de réaction est connu sous le nom d'événements synthétiques. L'événement synthétique est un wrapper inter-navigateur de l'événement natif du navigateur.
+example: 
+```
+function test() {  
+    function handleClick(e) {  
+        e.preventDefault();  
+        console.log('Hello World.');  
+    }  
+    return (  
+        <a href="#" onClick={handleClick}>  
+              Click here  
+        </a>  
+    );  
+} 
+```
+React Map : méthode utilisée pour parcourir et afficher une liste d'objets similaires d'un composant. Une carte n'est pas la fonctionnalité de React. Au lieu de cela, c'est la fonction JavaScript standard qui pourrait être appelée sur n'importe quel tableau. La méthode map() crée un nouveau tableau en appelant une fonction fournie sur chaque élément du tableau appelant.
+Exemple :
+```
+import React from 'react';   
+import ReactDOM from 'react-dom';   
+  
+function App(props) {  
+  const myLists = props.myLists;  
+  const listItems = myLists.map((myList) =>  
+    <li>{myList}</li>  
+  );  
+  return (  
+    <div>  
+          <h2>React Map Example</h2>  
+              <ul>{listItems}</ul>  
+    </div>  
+  );  
+}  
+const myLists = ['Apple', 'Orange', 'Banane', 'Avocado', 'pineapple'];   
+ReactDOM.render(  
+  <NameList myLists={myLists} />,  
+  document.getElementById('app')  
+);  
+export default App;  
+```
 
