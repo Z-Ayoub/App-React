@@ -1,0 +1,43 @@
+:root {
+    --primary: #273746;
+    --secondary: #F1C40F;
+    --white: white;
+}  
+
+.movieCard {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 0;
+    display: block;
+}
+
+.movieCard img {
+    width: 100%;
+    display: block;
+}
+
+.movieCard .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.movieCard:hover .overlay {
+    border: 3px solid var(--secondary);
+}
+
+.fillerPoster {
+    width: 75px;
+    height: 113px;
+    background-color: #dbdada;
+    border-radius: 5px;
+    margin-right: 15px;
+    display: block;
+    color: transparent;
+  }
