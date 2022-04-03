@@ -62,6 +62,7 @@ l'application :
 ```
 npm install react-router-dom
 ```
-On utilise <BrowserRouter> pour envelopper notre contenu.
-On définit <Routes>. <Route> prend un chemin d'accès et rend le Layoutcomposant.
+* On utilise BrowserRouter pour envelopper notre contenu.
+* On définit Routes
+* Route prend un chemin d'accès et rend le Layoutcomposant.
 
